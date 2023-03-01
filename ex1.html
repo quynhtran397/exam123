@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Sum of Primes</title>
+</head>
+<body>
+	<form id="primeForm">
+		<label for="a">Enter a:</label>
+		<input type="number" id="a" name="a" min="1" max="99">
+		<label for="b">Enter b:</label>
+		<input type="number" id="b" name="b" min="1" max="99">
+		<button type="submit">Calculate</button>
+	</form>
+	<p id="result"></p>
+
+	<script>
+		function isPrime(num) {
+			for (let i = 2; i < num; i++) {
+				if (num % i === 0) {
+					return false;
+				}
+			}
+			return num > 1;
+		}
+
+		function sumPrimes(a, b) {
+			let sum = 0;
+			for (let i = a; i <= b; i++) {
+				if (isPrime(i)) {
+					sum += i;
+				}
+			}
+			return sum;
+		}
+
+		const form = document.querySelector('#primeForm');
+		form.addEventListener('submit', (event) => {
+			event.preventDefault();
+			const a = parseInt(document.querySelector('#a').value);
+			const b = parseInt(document.querySelector('#b').value);
+			const result = sumPrimes(a, b);
+			document.querySelector('#result').innerHTML = `Sum of primes between ${a} and ${b} is ${result}.`;
+		});
+	</script>
+</body>
+</html>
