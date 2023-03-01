@@ -1,0 +1,20 @@
+# Exam1
+
+Open ex1.html or install static-server and run 
+```
+static-server -i ex1.html
+```
+---------
+# Exam2
+
+run
+```
+node ex2.js
+```
+---------
+# Ex3
+run
+```
+npm run start 
+```
+and check URL `HTTP://localhost:3000`
